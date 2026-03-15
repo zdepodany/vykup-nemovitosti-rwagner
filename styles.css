@@ -414,9 +414,16 @@ body {
 }
 
 .trust-stat--icon .trust-stat-icon {
-    font-size: 2.25rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
+    color: var(--color-accent);
+}
+
+.trust-stat--icon .trust-stat-icon svg {
+    width: 2.25rem;
+    height: 2.25rem;
 }
 
 .trust-stat--icon .trust-stat-label {
@@ -596,20 +603,26 @@ body {
 }
 
 .property-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: var(--color-surface);
     padding: 1.75rem;
     border-radius: var(--radius);
     border: 1px solid var(--color-border);
     text-align: center;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: border-color 0.2s;
+    text-decoration: none;
+    color: inherit;
 }
 
 .property-card--large {
     padding: 2rem;
 }
 
-.property-card--large .property-icon {
-    font-size: 2.75rem;
+.property-card--large .property-icon svg {
+    width: 2.75rem;
+    height: 2.75rem;
 }
 
 .property-card--large h3 {
@@ -635,14 +648,20 @@ body {
 }
 
 .property-card:hover {
-    transform: translateY(-2px);
     border-color: rgba(37, 99, 235, 0.25);
 }
 
 .property-icon {
-    font-size: 2.25rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.property-icon svg {
+    width: 2.25rem;
+    height: 2.25rem;
 }
 
 .property-card h3 {
@@ -654,6 +673,26 @@ body {
 .property-card p {
     font-size: 0.9rem;
     color: var(--color-text-muted);
+}
+
+.property-card-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: gap 0.2s;
+}
+
+.property-card-more svg {
+    flex-shrink: 0;
+}
+
+.property-card:hover .property-card-more {
+    gap: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -778,7 +817,7 @@ body {
     }
 }
 
-/* Why Invest Brno */
+/* Why Výkup domů 24 */
 .why-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -811,9 +850,16 @@ body {
 }
 
 .why-icon {
-    font-size: 2.5rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
+    color: var(--color-accent);
+}
+
+.why-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .why-card h3 {
@@ -967,6 +1013,24 @@ body {
 }
 
 /* Contact Form */
+.contact-phone {
+    text-align: center;
+    margin: 2rem 0 0;
+}
+
+.contact-phone a {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-phone a:hover {
+    color: var(--color-accent-hover);
+}
+
 .contact-form {
     max-width: 480px;
     margin: 2rem auto 0;
@@ -1255,6 +1319,26 @@ body {
 /* Invest page */
 .container--narrow {
     max-width: 680px;
+}
+
+.page-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.page-lead {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.page-content p {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.page-content p:last-child {
+    margin-bottom: 0;
 }
 
 .invest-intro {
