@@ -103,8 +103,9 @@ function animateNumber(el, start, end, duration) {
 
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
+    const formWrapper = contactForm && contactForm.closest('.contact-form-wrapper');
 
-    if (contactForm) {
+    if (contactForm && formWrapper && !formWrapper.classList.contains('contact-form-disabled')) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
