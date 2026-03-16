@@ -22,9 +22,9 @@
             </button>
             <nav class="nav">
                 <a href="#vykup">Výkup nemovitostí</a>
+                <a href="zastava.html">Zástava</a>
                 <a href="#projekty">Naše projekty</a>
                 <a href="investice.html">Investujte s námi</a>
-                <a href="#o-spolecnosti">O společnosti</a>
                 <a href="#kontakt">Kontakt</a>
                 <a href="tel:+420739602598" class="nav-phone">Zavolat</a>
             </nav>
@@ -111,6 +111,18 @@
                 </div>
                 <div class="property-types-cta">
                     <a href="#kontakt" class="btn btn-primary">Získat nezávaznou nabídku</a>
+                </div>
+
+                <div id="zastava" class="zastava-callout">
+                    <div class="zastava-callout-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                    </div>
+                    <h3 class="zastava-callout-title">Pomůžeme i se zástavou nemovitosti</h3>
+                    <p class="zastava-callout-text">Pokud nechcete nemovitost prodávat, můžeme nabídnout také řešení formou zástavy. Pomůžeme zajistit financování se zajištěním nemovitostí a vyřešit tak například exekuce, dluhy nebo krátkodobý nedostatek financí.</p>
+                    <div class="zastava-callout-actions">
+                        <a href="zastava.html" class="zastava-callout-link">Více o zástavě →</a>
+                        <a href="#kontakt" class="btn btn-primary zastava-callout-cta">Nezávazná konzultace</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -250,11 +262,8 @@
                 <h2 class="section-title">Kontaktujte nás</h2>
                 <p class="section-subtitle section-subtitle--lead">Potřebujete rychle prodat nemovitost?</p>
                 <p class="section-subtitle">Zanechte nám zprávu a ozveme se vám co nejdříve</p>
-                <div class="contact-form-wrapper contact-form-disabled">
-                    <div class="contact-form-overlay">
-                        <span class="contact-form-overlay-text">Formulář bude brzy k dispozici. Prozatím nás prosím kontaktujte telefonicky.</span>
-                    </div>
-                <form class="contact-form" id="contactForm">
+                <div class="contact-form-wrapper">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xlgppbvr" method="POST">
                     <div class="form-group">
                         <label for="name">Jméno a příjmení *</label>
                         <input type="text" id="name" name="name" required>
@@ -282,7 +291,10 @@
                     <button type="submit" class="btn btn-primary">Odeslat žádost</button>
                 </form>
                 </div>
-                <p class="contact-phone">Nebo nás zavolejte: <a href="tel:+420704005000">+420 704 005 000</a></p>
+                <div class="contact-options">
+                    <p class="contact-phone">Nebo nás zavolejte: <a href="tel:+420704005000">+420 704 005 000</a></p>
+                    <p class="contact-email">Nebo napište: <a href="mailto:info@vykupdomu24.cz">info@vykupdomu24.cz</a></p>
+                </div>
             </div>
         </section>
     </main>

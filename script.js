@@ -103,43 +103,57 @@ function animateNumber(el, start, end, duration) {
 
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
-    const formWrapper = contactForm && contactForm.closest('.contact-form-wrapper');
+    if (!contactForm) return;
 
-    if (contactForm && formWrapper && !formWrapper.classList.contains('contact-form-disabled')) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const propertyType = document.getElementById('propertyType').value;
-            const message = document.getElementById('message').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const propertyType = document.getElementById('propertyType').value;
+        const message = document.getElementById('message').value.trim();
 
-            if (!name || !phone || !propertyType) {
-                alert('Vyplňte prosím všechna povinná pole.');
-                return;
-            }
+        if (!name || !phone || !propertyType) {
+            alert('Vyplňte prosím všechna povinná pole.');
+            return;
+        }
 
-            // Simulace odeslání – v produkci by zde byl AJAX request na backend
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Odesílám...';
-            submitBtn.disabled = true;
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Odesílám...';
+        submitBtn.disabled = true;
 
-            setTimeout(function () {
-                submitBtn.textContent = 'Odesláno ✓';
-                submitBtn.style.background = '#22c55e';
-                submitBtn.style.color = '#fff';
-                contactForm.reset();
-
-                setTimeout(function () {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.style.color = '';
-                    submitBtn.disabled = false;
-                }, 3000);
-            }, 800);
-        });
-    }
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    submitBtn.textContent = 'Odesláno ✓';
+                    submitBtn.style.background = '#22c55e';
+                    submitBtn.style.color = '#fff';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Odeslání se nezdařilo.');
+                }
+            })
+            .catch(function () {
+                alert('Odeslání se nezdařilo. Zkuste to prosím znovu nebo nás kontaktujte telefonicky.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            })
+            .finally(function () {
+                if (submitBtn.textContent === 'Odesláno ✓') {
+                    setTimeout(function () {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.color = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }
+            });
+    });
 }
 
 function initProjectGallery() {
