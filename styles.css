@@ -1341,6 +1341,46 @@ body {
     color: var(--color-text-muted);
 }
 
+/* 404 page */
+.error-404 {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.error-404-code {
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-accent);
+    opacity: 0.15;
+    margin-bottom: -1rem;
+}
+
+.error-404-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.error-404-text {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-404-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
 .projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
