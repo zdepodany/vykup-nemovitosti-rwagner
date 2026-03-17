@@ -8,8 +8,8 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { 'analytics_storage': 'denied' });
       gtag('js', new Date());
-
       gtag('config', 'G-JQGGBW0WTH');
     </script>
     <title>Zásady ochrany osobních údajů | Výkup domů 24</title>
@@ -19,9 +19,11 @@
     <meta property="og:description" content="Zásady ochrany osobních údajů společnosti SOMITE, s.r.o.">
     <meta property="og:image" content="https://vykupdomu24.cz/img/og-img-homepage.jpg">
     <meta property="og:url" content="https://vykupdomu24.cz/soukromi.html">
+    <meta property="og:site_name" content="Výkup domů 24">
     <meta property="og:locale" content="cs_CZ">
     <link rel="canonical" href="https://vykupdomu24.cz/soukromi.html">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -169,6 +171,19 @@
         </div>
         <p class="footer-bottom">© 2026 SOMITE, s.r.o. · <a href="soukromi.html">Zásady ochrany osobních údajů</a> · <a href="https://zdenekpodany.cz" target="_blank" rel="noopener noreferrer">Web vytvořen od Zdeněk Podaný | Webovky Jednoduše</a></p>
     </footer>
+
+    <div id="cookieBar" class="cookie-bar" role="dialog" aria-labelledby="cookieBarTitle" aria-describedby="cookieBarDesc" aria-live="polite">
+        <div class="cookie-bar-inner container">
+            <div class="cookie-bar-content">
+                <h2 id="cookieBarTitle" class="cookie-bar-title">Používáme cookies</h2>
+                <p id="cookieBarDesc" class="cookie-bar-text">Používáme cookies k analýze návštěvnosti a zlepšování webu. Svůj souhlas můžete kdykoli změnit v nastavení prohlížeče. <a href="soukromi.html">Více informací</a></p>
+            </div>
+            <div class="cookie-bar-actions">
+                <button type="button" class="btn btn-outline cookie-bar-btn" data-action="reject" aria-label="Odmítnout cookies">Odmítnout</button>
+                <button type="button" class="btn btn-primary cookie-bar-btn" data-action="accept" aria-label="Přijmout cookies">Přijmout</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

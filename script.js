@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initTrustStats();
     initContactForm();
     initProjectGallery();
+    initCookieBar();
 });
 
 function initNavBurger() {
@@ -237,5 +238,34 @@ function initProjectGallery() {
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') showPrev();
         if (e.key === 'ArrowRight') showNext();
+    });
+}
+
+function initCookieBar() {
+    const COOKIE_CONSENT_KEY = 'cookie_consent';
+    const bar = document.getElementById('cookieBar');
+
+    if (!bar) return;
+
+    var consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (consent === 'accept' || consent === 'reject') {
+        bar.classList.add('cookie-bar--hidden');
+        if (consent === 'accept' && typeof gtag === 'function') {
+            gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+        return;
+    }
+
+    bar.querySelectorAll('[data-action]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var action = btn.dataset.action;
+            localStorage.setItem(COOKIE_CONSENT_KEY, action);
+
+            if (action === 'accept' && typeof gtag === 'function') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+
+            bar.classList.add('cookie-bar--hidden');
+        });
     });
 }
