@@ -1756,6 +1756,53 @@ body {
     margin-bottom: 0;
 }
 
+.privacy-content {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.privacy-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.privacy-content h2:first-child {
+    margin-top: 0;
+}
+
+.privacy-content p {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.privacy-content ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--color-text-muted);
+}
+
+.privacy-content li {
+    margin-bottom: 0.35rem;
+}
+
+.privacy-content a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.privacy-content a:hover {
+    text-decoration: underline;
+}
+
+.privacy-hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+}
+
 .invest-intro {
     font-size: 1.1rem;
     line-height: 1.8;
